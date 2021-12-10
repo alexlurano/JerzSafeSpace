@@ -151,6 +151,7 @@ WebDriverWait(driver, 10).until(
 
 Linkwanted = driver.find_element_by_class_name('title-link')
 print(Linkwanted)
+Linkwanted.click()
 
 
 
