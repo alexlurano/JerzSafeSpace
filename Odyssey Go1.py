@@ -34,7 +34,7 @@ sh1["B1"].value="Price"
 sh1["C1"].value="Description"
 sh1["D1"].value="Link"
 
-wk.save("C:\\Users\Jerry\Documents\Python Automation Project\Odyssey Go1.xlsx")
+wk.save("Odyssey Go1.xlsx")
 
 #Direct website to info I want to import
 
@@ -144,13 +144,16 @@ try:
 
 except:
     time.sleep(10)
+    
+WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.CLASS_NAME, "title-link"))
+    )
 
-driver.implicitly_wait(30)
-Linkwanted = driver.find_element(By.TAG_NAME, "h3")
-driver.print(Linkwanted)
+Linkwanted = driver.find_element_by_class_name('title-link')
+print(Linkwanted)
 
 
-time.sleep(30)
+
 
 
 
